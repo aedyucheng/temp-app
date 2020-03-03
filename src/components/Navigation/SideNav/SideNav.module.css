@@ -5,7 +5,8 @@
     z-index: 200;
     width: 230px;
     height: 100%;
-    background-color: darkgrey;
+    background-color: lightgray;
+    transition: transform 0.3s ease-out;
 }
 
 .SideNav ul {
@@ -16,10 +17,10 @@
     padding: 0;
 }
 
-.Close {
-    display: none;
+.Show {
+    transform: translateX(0);
 }
 
-.Open {
-    display: block;
+.Hide {
+    transform: translateX(-100%);
 }

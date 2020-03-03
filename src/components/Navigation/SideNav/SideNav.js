@@ -1,19 +1,46 @@
-import React, { Fragment} from 'react';
+import React, { Fragment } from 'react';
 
-import classes from './SideNav.module.css';
 import NavItem from './NavItem/NavItem';
 
-const sideNav = props => (
-    <Fragment>
-        <nav className={classes.SideNav}>
-            <ul>
-                <NavItem name="Home" path="/"/>
-                <NavItem name="About" path="/about"/>
-                <NavItem name="Products" path="/products"/>
-                <NavItem name="Contact" path="/contact"/>
-            </ul>
-        </nav>
-    </Fragment>
-);
+import classes from './SideNav.module.css';
+import Backdrop from '../../UI/Backdrop/Backdrop';
+
+const sideNav = props => {
+    let sideNavClasses = [classes.SideNav, ( props.show ? classes.Show : classes.Hide)];
+    let productMenu = {
+        name: "Products",
+        path: "/products",
+        children: [
+            { name: "AAAA", path: "#" },
+            { name: "BBBB", path: "#" },
+            { 
+                name: "CCCCC", 
+                path: "#",
+                children: [
+                    { name: "CCC AAAA", path: "#" },
+                    { name: "CCCC BBB", path: "#" }
+                ]
+            }
+        ]
+    }
+
+    return (
+        <Fragment>
+            <Backdrop show={props.show} clicked={props.toggleSideNav}/>
+            <nav className={sideNavClasses.join(' ')}>
+                <ul>
+                    <NavItem name="Home" path="/" />
+                    <NavItem name="About" path="/about" />
+                    <NavItem
+                        name={productMenu.name}
+                        path={productMenu.path}
+                        children={productMenu.children}
+                    />
+                    <NavItem name="Contact" path="/contact" />
+                </ul>
+            </nav>
+        </Fragment>
+    );
+}
 
 export default sideNav;
