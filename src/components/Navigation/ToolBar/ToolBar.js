@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Hamburger from '../Hamburger/Hamburger'
+import SideNavToggler from './SideNavToggler/SideNavToggler'
 
 import classes from './ToolBar.module.css';
 
-const ToolBar = props => ( 
+const ToolBar = props => (
     <div className={classes.ToolBar}>
-        <Hamburger toggleSideNav={props.toggleSideNav}/>
+        <SideNavToggler toggleSideNav={props.toggleSideNav}/>
     </div>
 );
 

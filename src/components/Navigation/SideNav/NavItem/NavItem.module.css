@@ -1,24 +1,30 @@
-.Selected {
-    background-color: darkgray;
+.NavItem {
+    display: flex;
+    flex-flow: column nowrap;
 }
 
-.NavItem a {
+.NavLink {
     text-decoration: none;
     color: black;
-    display: block;
-    padding: 15px;
+    padding: 12px 22px;
 }
 
-.NavItem a:hover {
+.NavLink:hover {
     background-color: darkgray;
     color: ivory;
 }
 
-.NavItem ul.Show {
-    display: show;   
-    margin-left: 15px;
+.ChildrenList {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 16px;
+    padding: 0;
 }
 
-.NavItem ul.Hide {
+.Hide {
     display: none;
+}
+
+.NavItem .Selected {
+    background-color: darkgray;
 }

@@ -2,10 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faBars, faTimes , faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// Import fontawesome icons
+library.add(faBars, faTimes, faAngleDown, faAngleRight);
 
 const app = (
     <BrowserRouter>
